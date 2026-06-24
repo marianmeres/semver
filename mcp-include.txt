@@ -1,0 +1,7 @@
+Zero-dependency utilities to normalize, parse, and compare "semver-ish" version
+strings (format MAJOR.MINOR.PATCH[-PRERELEASE][+BUILD]). Input is lenient: MINOR
+and PATCH are optional (default 0) and a leading "v"/"V" is stripped, so "v1",
+"1.2" and "7-rc.1" are accepted. Exposes normalizeSemver, parseSemver, and a
+compareSemver comparator that follows semver precedence rules and plugs directly
+into Array.prototype.sort. Useful for sorting version lists, picking the latest
+release, and gating features on a minimum version.
